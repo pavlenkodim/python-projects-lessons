@@ -9,7 +9,7 @@ def get_users ():
 
 def create_post (title, content, user_id):
     r = requests.post('https://jsonplaceholder.typicode.com/posts',
-                      data={'title': title, 'body': content, 'userId': user_id})
+                      data={'title': title, 'body': content, 'userId': user_id}, headers={'Content-Type': 'application/json'})
     return r.json()
 
 new_post = create_post('Hello World', 'This is my new post', 1)
