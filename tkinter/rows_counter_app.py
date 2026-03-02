@@ -1,7 +1,6 @@
 import os
 from tkinter import *
 from tkinter import filedialog
-import os
 import pandas as pd
 # need `pip install openpyxl`
 
