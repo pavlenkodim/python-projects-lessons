@@ -13,17 +13,15 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql
 
-  pgadmin4:
-    image: elestio/pgadmin:latest
+  adminer:
+    image: adminer:latest
+    container_name: adminer
     restart: always
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      PGADMIN_DEFAULT_PASSWORD: admin
-      PGADMIN_LISTEN_PORT: 8080
     ports:
       - "8080:8080"
-    volumes:
-      - ./servers.json:/pgadmin4/servers.json
+    environment:
+      ADMINER_DESIGN: pepa-linha-dark   # встроенная тема
+
 
 volumes:
   postgres_data:
